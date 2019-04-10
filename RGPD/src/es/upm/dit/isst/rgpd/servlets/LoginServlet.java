@@ -21,6 +21,8 @@ import es.upm.dit.isst.rgpd.dao.ExpertoDAOImplementation;
 public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		InvestigadorDAO idao = InvestigadorDAOImplementation.getInstance();
+		idao.readAll();
 		getServletContext().getRequestDispatcher( "/LoginView.jsp" ).forward( req, resp );
 	}
 	

@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -30,7 +32,7 @@ public class Solicitud implements Serializable {
 	@ManyToOne
 	private Investigador investigador;
 	
-	@ManyToOne
+	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Experto> expertos;
 	
 	public Solicitud() {

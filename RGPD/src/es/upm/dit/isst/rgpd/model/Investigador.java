@@ -20,8 +20,11 @@ public class Investigador implements Serializable {
 	private String nombre;
 	
 	private String password;
+	private String apellidos;
 	
-	@OneToMany(mappedBy = "ivestigador", fetch = FetchType.EAGER)
+	
+
+	@OneToMany(mappedBy = "investigador", fetch = FetchType.EAGER)
 	private Collection<Solicitud> solRealizadas;
 	
 	
@@ -60,7 +63,13 @@ public class Investigador implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
 	
 	
 

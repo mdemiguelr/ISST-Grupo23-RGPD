@@ -5,6 +5,7 @@ import java.util.Collection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -20,7 +21,7 @@ public class Experto {
 	private boolean disponible;
 	
 	
-	@OneToMany(mappedBy = "expertos", fetch = FetchType.EAGER)
+	@ManyToMany(mappedBy = "expertos", fetch = FetchType.EAGER)
 	private Collection<Solicitud> solAsignadas;
 	
 	
