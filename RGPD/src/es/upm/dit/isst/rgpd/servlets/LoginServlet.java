@@ -23,16 +23,18 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		InvestigadorDAO idao = InvestigadorDAOImplementation.getInstance();
 		idao.readAll();
+		ExpertoDAO edao = ExpertoDAOImplementation.getInstance();
+		edao.readAll();
 		getServletContext().getRequestDispatcher( "/LoginView.jsp" ).forward( req, resp );
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String email = req.getParameter( "email" );
-		String pass = req.getParameter( "password" );
+		String password = req.getParameter( "password" );
 		Subject currentUser = SecurityUtils.getSubject();
 		if ( !currentUser.isAuthenticated() ) {
-			UsernamePasswordToken token = new UsernamePasswordToken( email, pass );
+			UsernamePasswordToken token = new UsernamePasswordToken( email, password );
 			try {
 				currentUser.login( token );
 				if ( currentUser.hasRole( "experto" ) )

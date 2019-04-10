@@ -21,7 +21,7 @@ public class InvestigadorServlet extends HttpServlet {
 		InvestigadorDAO idao = InvestigadorDAOImplementation.getInstance();
 		String email = req.getParameter( "email" );
 		req.getSession().setAttribute( "investigador", idao.read(email) );
-		getServletContext().getRequestDispatcher( "/InvestigadorView.jsp" ).forward( req, resp );
+		getServletContext().getRequestDispatcher( "/SolicitudListaInvView.jsp" ).forward( req, resp );
 	     
 	}
 }

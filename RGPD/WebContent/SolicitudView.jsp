@@ -14,7 +14,7 @@
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -45,24 +45,24 @@
 						<div class="row">
 							<div class="col-lg-12 col-md-12">
 								<h3 class="mb-30">Formulario</h3>
-								<form action="#">
 									<div class="mt-10">
-										Nombre: ${ investigador.getName() }
+										Nombre: ${ investigador.getNombre() }
 									
 									</div>
 									<div class="mt-10">
-										Apellidos: ${ investigador.getApellidos() }
+										Apellidos: ${ investigador.apellidos }
 									</div>
 									<div class="mt-10">
 										Email: ${ investigador.getEmail() }
 									</div>
+									<form action="CrearSolicitudServlet" method="post" enctype="multipart/form-data">
 									<div class="mt-10">
-										<input type="email" name="Título de la Solicitud" placeholder="Título de la Solicitud" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Título de la Solicitud'" required class="single-input">
+										<input type="text" name="titulo" placeholder="Título de la Solicitud" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Título de la Solicitud'" required class="single-input">
 									</div>
 									<div class="input-group-icon mt-10">
 										<div class="icon"><i class="fa fa-book" aria-hidden="true"></i></div>
 										<div class="form-select" id="default-select"">
-											<select>
+											<select name="escuela">
 												<option value="1">E.T.S de Arquitectura</option>
 												<option value="1">E.T.S de Edificación</option>
 												<option value="1">E.T.S de Ingeniería Aeronáutica y del Espacio</option>
@@ -87,14 +87,17 @@
 									
 									
 									<div class="mt-10">
-										<input type="text" name="first_name" placeholder="Departamento" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Deprtamento'" required class="single-input-primary">
+										<input type="text" name="departamento" placeholder="Departamento" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Deprtamento'" required class="single-input-primary">
 									</div>
 
 									<div class="mt-10">
-										<div class="form-group">
-										<input type="file" class="filestyle" data-icon="false">
+										<div class="form-group" >
+										<input type="file" name="file" class="filestyle" data-icon="false">
  									</div>
-								
+ 									<p>
+ 										<input type="hidden" name="emailInv" value="${investigador.getEmail()}" />
+										<button type="submit">Enviar</button>
+									</p>
 								</form>
 							</div>
 							

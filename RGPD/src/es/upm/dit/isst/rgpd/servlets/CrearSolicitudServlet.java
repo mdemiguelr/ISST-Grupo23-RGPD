@@ -35,7 +35,7 @@ public class CrearSolicitudServlet extends HttpServlet {
 		String titulo = req.getParameter( "titulo" );
 		String departamento = req.getParameter( "departamento" );
 		String escuela = req.getParameter( "escuela" );
-		//meter hiden en el boton crear solicitud del jsp
+		
 		String emailInv = req.getParameter( "emailInv" );
 		
 		Part filePart = req.getPart("file");

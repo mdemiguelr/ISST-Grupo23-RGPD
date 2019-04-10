@@ -14,7 +14,7 @@
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
@@ -37,25 +37,50 @@
 <!--===============================================================================================-->
 </head>
 	<body> 
-	<shiro:user>
-    Welcome back <shiro:principal />! Click <a href="LogoutServlet">here</a> to logout.
-	</shiro:user>
-		
+		<header id="header" id="home">          
+          <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+              <div id="logo">
+                <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+              </div>
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                  <li class="menu-active">
+                  	<input type="hidden" name="email" value="${investigador.email}" />
+                  	<a href="InvestigadorServlet">Mis Solicitudes</a>
+                  </li>
+                  <li>
+                  	
+                  	<a href="NuevaSolicitudServlet">Nueva Solicitud</a>
+                  	<input type="hidden" name="emailInv" value="${investigador.email}" />
+                  	</li>
+                  <li><a href="LogoutServlet">Salir</a></li>
+                 </ul>
+              </nav><!-- #nav-menu-container -->            
+            </div>
+          </div>
+        </header><!-- #header -->
+        <c:if test="${investigador.getSolRealizadas().size() == 0}">
+			<p> "${investigador.email }" "${investigador.getApellidos() }"Todavía no ha realizado ninguna solicitud, si desea crear una pulse en 'Nueva Solicitud'</p>
+		</c:if>
+		<c:if test="${investigador.getSolRealizadas().size() != 0}">
 		<div class="container-lista">
-		<c:forEach items="${investigador.getSolRealizadas()}" var="tfgi">
+		<c:forEach items="${investigador.getSolRealizadas()}" var="soli">
 		<tr>
 		<td>
         <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action">
+          <a href="/SolicitudInvView.jsp" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">tfgi.getTitulo()</h5>
+              <h5 class="mb-1">soli.getTitulo()</h5>
+              <input type="hidden" name="investigador" value="${investigador}" />
+			  <input type="hidden" name="solicitud" value="${soli}" />
             </div>
           </a>
         </div>
         </td>
         </tr>
-        </c:forEach>
-        
+        </c:forEach>  
       </div>
+      </c:if>
 	</body>
 </html>
