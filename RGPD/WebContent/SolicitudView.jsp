@@ -37,10 +37,35 @@
 <!--===============================================================================================-->
 </head>
 	<body> 
-	<shiro:user>
-    Welcome back <shiro:principal />! Click <a href="LogoutServlet">here</a> to logout.
-	</shiro:user>
-		
+	<header id="header" id="home">          
+          <div class="container">
+            <div class="row align-items-center justify-content-between d-flex">
+              <div id="logo">
+                <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+              </div>
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                  <li class="menu-active">
+                  	<form action="InvestigadorServlet" method="get">
+						<input type="hidden" name="email" value="${investigador.email}" />
+			    		<button type="submit">Mis Solicitudes</button>
+					</form>
+                  </li>
+                  <li>
+                  	<form action="NuevaSolicitudServlet" method="get">
+						<input type="hidden" name="emailInv" value="${investigador.email}" />
+			    		<button type="submit">Nueva Solicitud</button>
+					</form>
+                  </li>
+                  <li><form action="LogoutServlet" method="get">
+			    		<button type="submit">Salir</button>
+					</form>
+				  </li>
+                 </ul>
+              </nav><!-- #nav-menu-container -->            
+            </div>
+          </div>
+        </header><!-- #header -->
 		<div class="section-top-border">
 						<div class="row">
 							<div class="col-lg-12 col-md-12">
@@ -50,7 +75,7 @@
 									
 									</div>
 									<div class="mt-10">
-										Apellidos: ${ investigador.apellidos }
+										Apellidos: ${ investigador.getApellidos() }
 									</div>
 									<div class="mt-10">
 										Email: ${ investigador.getEmail() }
@@ -64,23 +89,23 @@
 										<div class="form-select" id="default-select"">
 											<select name="escuela">
 												<option value="1">E.T.S de Arquitectura</option>
-												<option value="1">E.T.S de Edificación</option>
-												<option value="1">E.T.S de Ingeniería Aeronáutica y del Espacio</option>
-												<option value="1">E.T.S de Ingeniería Agronómica, Alimentaria y de Biosistemas</option>
-												<option value="1">E.T.S de Ingeniería de Montes, Forestal y del Medio Natural</option>
-												<option value="1">E.T.S de Ingenieros de Caminos, Canales y Puertos</option>
-												<option value="1">E.T.S de Ingenieros de Telecomunicación</option>
-												<option value="1">E.T.S de Ingenieros Navales</option>
-												<option value="1">E.T.S de Ingeniería de Montes, Forestal y del Medio Natural</option>
-												<option value="1">INEF</option>
-												<option value="1">E.T.S de Ingeniería Civil</option>
-												<option value="1">E.T.S de Ingeniería y Diseño Industrial</option>
-												<option value="1">E.T.S de Ingenieros de Minas y Energía</option>
-												<option value="1">E.T.S de Ingenieros Industriales</option>
-												<option value="1">E.T.S de Ingenieros Informáticos</option>
-												<option value="1">E.T.S de Ingeniería de Sistemas Informáticos</option>
-												<option value="1">E.T.S de Ingeniería y Sistemas de Telecomunicación</option>
-												<option value="1">E.T.S de Ingenieros en Topografía, Geodesia y Cartografía</option>
+												<option value="2">E.T.S de Edificación</option>
+												<option value="3">E.T.S de Ingeniería Aeronáutica y del Espacio</option>
+												<option value="4">E.T.S de Ingeniería Agronómica, Alimentaria y de Biosistemas</option>
+												<option value="5">E.T.S de Ingeniería de Montes, Forestal y del Medio Natural</option>
+												<option value="6">E.T.S de Ingenieros de Caminos, Canales y Puertos</option>
+												<option value="7">E.T.S de Ingenieros de Telecomunicación</option>
+												<option value="8">E.T.S de Ingenieros Navales</option>
+												<option value="9">E.T.S de Ingeniería de Montes, Forestal y del Medio Natural</option>
+												<option value="10">INEF</option>
+												<option value="11">E.T.S de Ingeniería Civil</option>
+												<option value="12">E.T.S de Ingeniería y Diseño Industrial</option>
+												<option value="13">E.T.S de Ingenieros de Minas y Energía</option>
+												<option value="14">E.T.S de Ingenieros Industriales</option>
+												<option value="15">E.T.S de Ingenieros Informáticos</option>
+												<option value="16">E.T.S de Ingeniería de Sistemas Informáticos</option>
+												<option value="17">E.T.S de Ingeniería y Sistemas de Telecomunicación</option>
+												<option value="18">E.T.S de Ingenieros en Topografía, Geodesia y Cartografía</option>
 											</select>
 										</div>
 									</div>
@@ -99,14 +124,12 @@
 										<button type="submit">Enviar</button>
 									</p>
 								</form>
+								<form action="InvestigadorServlet" method="get">
+						    		<button type="submit">Cancelar</button>
+								</form>
 							</div>
 							
-								</div>
-							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-	
 	</body>
 </html>

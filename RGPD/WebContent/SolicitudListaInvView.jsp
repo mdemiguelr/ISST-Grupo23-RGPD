@@ -46,15 +46,21 @@
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
                   <li class="menu-active">
-                  	<input type="hidden" name="email" value="${investigador.email}" />
-                  	<a href="InvestigadorServlet">Mis Solicitudes</a>
+                  	<form action="InvestigadorServlet" method="get">
+						<input type="hidden" name="email" value="${investigador.email}" />
+			    		<button type="submit">Mis Solicitudes</button>
+					</form>
                   </li>
                   <li>
-                  	
-                  	<a href="NuevaSolicitudServlet">Nueva Solicitud</a>
-                  	<input type="hidden" name="emailInv" value="${investigador.email}" />
-                  	</li>
-                  <li><a href="LogoutServlet">Salir</a></li>
+                  	<form action="NuevaSolicitudServlet" method="get">
+						<input type="hidden" name="emailInv" value="${investigador.email}" />
+			    		<button type="submit">Nueva Solicitud</button>
+					</form>
+                  </li>
+                  <li><form action="LogoutServlet" method="get">
+			    		<button type="submit">Salir</button>
+					</form>
+				  </li>
                  </ul>
               </nav><!-- #nav-menu-container -->            
             </div>
@@ -65,13 +71,13 @@
 		</c:if>
 		<c:if test="${investigador.getSolRealizadas().size() != 0}">
 		<div class="container-lista">
-		<c:forEach items="${investigador.getSolRealizadas()}" var="soli">
+		<c:forEach items="${investigador.getSolRealizadas()}" var="soli" step="3">
 		<tr>
 		<td>
         <div class="list-group">
           <a href="/SolicitudInvView.jsp" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">soli.getTitulo()</h5>
+              <h5 class="mb-1">${ soli.getTitulo() }</h5>
               <input type="hidden" name="investigador" value="${investigador}" />
 			  <input type="hidden" name="solicitud" value="${soli}" />
             </div>

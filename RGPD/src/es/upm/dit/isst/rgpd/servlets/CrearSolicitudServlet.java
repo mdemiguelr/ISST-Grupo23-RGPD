@@ -28,7 +28,7 @@ import es.upm.dit.isst.rgpd.model.Solicitud;
 
 
 @MultipartConfig
-@WebServlet("/CreateSolicitudServlet")
+@WebServlet("/CrearSolicitudServlet")
 public class CrearSolicitudServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -87,6 +87,6 @@ public class CrearSolicitudServlet extends HttpServlet {
 		SolicitudDAO sdao = SolicitudDAOImplementation.getInstance();
 		sdao.create( solicitud );
 		
-		resp.sendRedirect( req.getContextPath() + "/InvestigadorServelet" );
+		resp.sendRedirect( req.getContextPath() + "/InvestigadorServlet?email" + emailInv );
 	}
 }
