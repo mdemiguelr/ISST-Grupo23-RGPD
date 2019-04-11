@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.upm.dit.isst.rgpd.dao.InvestigadorDAO;
 import es.upm.dit.isst.rgpd.dao.InvestigadorDAOImplementation;
+import es.upm.dit.isst.rgpd.model.Investigador;
 
 
 
@@ -20,7 +21,8 @@ public class InvestigadorServlet extends HttpServlet {
 		
 		InvestigadorDAO idao = InvestigadorDAOImplementation.getInstance();
 		String email = req.getParameter( "email" );
-		req.getSession().setAttribute( "investigador", idao.read(email) );
+		Investigador investigador = idao.read(email); 
+		req.getSession().setAttribute("investigador", investigador );
 		getServletContext().getRequestDispatcher( "/SolicitudListaInvView.jsp" ).forward( req, resp );
 	     
 	}

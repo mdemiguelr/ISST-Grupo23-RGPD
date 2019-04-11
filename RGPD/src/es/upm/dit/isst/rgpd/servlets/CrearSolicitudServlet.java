@@ -70,17 +70,22 @@ public class CrearSolicitudServlet extends HttpServlet {
 		
 		//De los expertos disponibles seleccionamos los 3 con menos solicitudes
 		List<Experto> expertos = new ArrayList<>();
-		while(expertos.size() < 3) {
-			Experto expMin = expertosDisp.get(0);
-			for(int i=0; i<= ( expertosDisp.size() - 1 ); i++) {
-				if(expertosDisp.get(i).getSolAsignadas().size() < expMin.getSolAsignadas().size()) {
-					expMin = expertosDisp.get(i);
-				}
-			}
-			expertos.add(expMin);
-			expertosDisp.remove(expMin);
-		}
 		
+			while(expertos.size() < 3) {
+				if(expertosDisp.size()==0)
+				{
+					break;
+				}
+				Experto expMin = expertosDisp.get(0);
+				for(int i=0; i<= ( expertosDisp.size() - 1 ); i++) {
+					if(expertosDisp.get(i).getSolAsignadas().size() < expMin.getSolAsignadas().size()) {
+						expMin = expertosDisp.get(i);
+					}
+				}
+				expertos.add(expMin);
+				expertosDisp.remove(expMin);
+			
+		}
 		solicitud.setExpertos(expertos);
 	
 		
