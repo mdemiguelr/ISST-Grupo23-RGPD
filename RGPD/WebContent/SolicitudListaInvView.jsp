@@ -67,21 +67,25 @@
           </div>
         </header><!-- #header -->
         <c:if test="${investigador.getSolRealizadas().size() == 0}">
-			<p> "${investigador.email }" "${investigador.getApellidos() }"Todavía no ha realizado ninguna solicitud, si desea crear una pulse en 'Nueva Solicitud'</p>
+			<p> Todavía no ha realizado ninguna solicitud, si desea crear una pulse en 'Nueva Solicitud'</p>
 		</c:if>
 		<c:if test="${investigador.getSolRealizadas().size() != 0}">
 		<div class="container-lista">
 		<c:forEach items="${investigador.getSolRealizadas()}" var="soli" step="3">
 		<tr>
 		<td>
+		
+					
         <div class="list-group">
-          <a href="/SolicitudInvView.jsp" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">${ soli.getTitulo() }</h5>
-              <input type="hidden" name="investigador" value="${investigador}" />
-			  <input type="hidden" name="solicitud" value="${soli}" />
-            </div>
-          </a>
+          <form action="SolicitudServlet" method="get">
+         	  <input type="hidden" name="email" value="${investigador.getEmail()}" />
+			  <input type="hidden" name="idSol" value="${soli.getId()}" />
+			  <button type="submit">
+		             <div class="d-flex w-100 justify-content-between list-group-item list-group-item-action">
+		             <h5 class="mb-1">${ soli.getTitulo() }</h5>
+		             </div>
+            </button>
+          </form>
         </div>
         </td>
         </tr>

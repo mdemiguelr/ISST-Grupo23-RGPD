@@ -1,10 +1,12 @@
 package es.upm.dit.isst.rgpd.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
@@ -16,6 +18,7 @@ public class Solicitud implements Serializable {
 	
 	
 	@Id
+	@GeneratedValue
 	private int id = 0;
 	
 	private String titulo;
@@ -26,6 +29,16 @@ public class Solicitud implements Serializable {
 	
 	private int estado;
 	
+	private LocalDate fechaCreacion;
+	
+	public LocalDate getFechaCreacion() {
+		return fechaCreacion;
+	}
+
+	public void setFechaCreacion(LocalDate fechaCreacion) {
+		this.fechaCreacion = fechaCreacion;
+	}
+
 	@Lob
 	private byte[] memoria;
 
@@ -104,5 +117,4 @@ public class Solicitud implements Serializable {
 	}
 
 	
-
 }

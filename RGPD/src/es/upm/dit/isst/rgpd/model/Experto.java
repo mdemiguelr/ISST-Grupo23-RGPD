@@ -1,6 +1,6 @@
 package es.upm.dit.isst.rgpd.model;
 
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,7 +22,7 @@ public class Experto {
 	
 	
 	@ManyToMany(mappedBy = "expertos", fetch = FetchType.EAGER)
-	private Collection<Solicitud> solAsignadas;
+	private List<Solicitud> solAsignadas;
 	
 	
 	public Experto() {
@@ -60,12 +60,12 @@ public class Experto {
 	}
 
 
-	public Collection<Solicitud> getSolAsignadas() {
+	public List<Solicitud> getSolAsignadas() {
 		return solAsignadas;
 	}
 
 
-	public void setSolAsignadas(Collection<Solicitud> solAsignadas) {
+	public void setSolAsignadas(List<Solicitud> solAsignadas) {
 		this.solAsignadas = solAsignadas;
 	}
 

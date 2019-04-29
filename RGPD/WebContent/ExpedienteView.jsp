@@ -46,15 +46,9 @@
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
                   <li class="menu-active">
-                  	<form action="InvestigadorServlet" method="get">
-						<input type="hidden" name="email" value="${investigador.email}" />
-			    		<button type="submit">Mis Solicitudes</button>
-					</form>
-                  </li>
-                  <li>
-                  	<form action="NuevaSolicitudServlet" method="get">
-						<input type="hidden" name="emailInv" value="${investigador.email}" />
-			    		<button type="submit">Nueva Solicitud</button>
+                  	<form action="ExpertoServlet" method="get">
+						<input type="hidden" name="email" value="${experto.email}" />
+			    		<button type="submit">Mis Expedientes</button>
 					</form>
                   </li>
                   <li><form action="LogoutServlet" method="get">
@@ -73,17 +67,17 @@
                 
                 <div class="table-row">
                   <div class="country"> Nombre </div>
-                  <div class="visit">${ investigador.getNombre() }</div>
+                  <div class="visit">${ solicitud.getInvestigador().getNombre() }</div>
                   
                 </div>
                 <div class="table-row">
                   <div class="country"> Apellidos</div>
-                  <div class="visit">${ investigador.getApellidos() }</div>
+                  <div class="visit">${ solicitud.getInvestigador().getApellidos() }</div>
                   
                 </div>
                 <div class="table-row">
                   <div class="country"> Email</div>
-                  <div class="visit">${ investigador.getEmail() }</div>
+                  <div class="visit">${ solicitud.getInvestigador().getEmail() }</div>
                   
                 </div>
                 <div class="table-row">
@@ -116,8 +110,20 @@
                   			<input type="hidden" name="id" value="${solicitud.getId()}" />
 			    			<button type="submit">Descargar</button>
                   		</div>
-					</form>
+				</form>
                 </div>
+                <c:if test="${solicitud.estado == 0}">
+                <form action="ValidarServlet" method="post">
+						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
+						<input type="hidden" name="email" value="${experto.getEmail()}" />
+						<button type="submit" class="btn btn-outline-success">Validar</button>
+				</form>
+				<form action="DenegarServlet" method="post">
+						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
+						<input type="hidden" name="email" value="${experto.getEmail()}" />
+						<button type="submit" class="btn btn-outline-danger">Denegar</button>
+				</form>
+				</c:if>
                 
               </div>
             </div>

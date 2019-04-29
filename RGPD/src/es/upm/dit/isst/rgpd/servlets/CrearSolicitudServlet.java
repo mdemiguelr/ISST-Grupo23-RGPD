@@ -3,6 +3,7 @@ package es.upm.dit.isst.rgpd.servlets;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,9 +33,10 @@ import es.upm.dit.isst.rgpd.model.Solicitud;
 public class CrearSolicitudServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String titulo = req.getParameter( "titulo" );
-		String departamento = req.getParameter( "departamento" );
-		String escuela = req.getParameter( "escuela" );
+		String titulo = new String(req.getParameter( "titulo" ).getBytes("ISO-8859-1"),"UTF-8");
+		String departamento = new String(req.getParameter( "departamento" ).getBytes("ISO-8859-1"),"UTF-8");
+		String escuela = new String(req.getParameter( "escuela" ).getBytes("ISO-8859-1"),"UTF-8");
+		LocalDate fecha = LocalDate.now();
 		
 		String emailInv = req.getParameter( "emailInv" );
 		
@@ -52,6 +54,8 @@ public class CrearSolicitudServlet extends HttpServlet {
 		solicitud.setEscuela( escuela );
 		solicitud.setEstado( 0 );
 		solicitud.setMemoria(output.toByteArray());
+		solicitud.setFechaCreacion(fecha);
+	
 		
 		Investigador inv = new Investigador();
 		InvestigadorDAO idao = InvestigadorDAOImplementation.getInstance();
@@ -91,7 +95,11 @@ public class CrearSolicitudServlet extends HttpServlet {
 		
 		SolicitudDAO sdao = SolicitudDAOImplementation.getInstance();
 		sdao.create( solicitud );
+		sdao.readAll();
+		idao.read(emailInv);
 		
-		resp.sendRedirect( req.getContextPath() + "/InvestigadorServlet?email" + emailInv );
+		req.getSession().setAttribute("email", emailInv);
+		resp.sendRedirect( req.getContextPath() + "/InvestigadorServlet?email=" + emailInv );
+		
 	}
 }

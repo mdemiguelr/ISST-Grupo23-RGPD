@@ -37,7 +37,7 @@
 <!--===============================================================================================-->
 </head>
 	<body> 
-	<header id="header" id="home">          
+		<header id="header" id="home">          
           <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
               <div id="logo">
@@ -46,15 +46,9 @@
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
                   <li class="menu-active">
-                  	<form action="InvestigadorServlet" method="get">
-						<input type="hidden" name="email" value="${investigador.email}" />
-			    		<button type="submit">Mis Solicitudes</button>
-					</form>
-                  </li>
-                  <li>
-                  	<form action="NuevaSolicitudServlet" method="get">
-						<input type="hidden" name="emailInv" value="${investigador.email}" />
-			    		<button type="submit">Nueva Solicitud</button>
+                  	<form action="ExpertoServlet" method="get">
+						<input type="hidden" name="email" value="${experto.email}" />
+			    		<button type="submit">Mis Expedientes</button>
 					</form>
                   </li>
                   <li><form action="LogoutServlet" method="get">
@@ -66,62 +60,31 @@
             </div>
           </div>
         </header><!-- #header -->
-		<div class="section-top-border">
-            <h3 class="mb-30">Expediente</h3>
-            <div class="progress-table-wrap">
-              <div class="progress-table">
-                
-                <div class="table-row">
-                  <div class="country"> Nombre </div>
-                  <div class="visit">${ investigador.getNombre() }</div>
-                  
-                </div>
-                <div class="table-row">
-                  <div class="country"> Apellidos</div>
-                  <div class="visit">${ investigador.getApellidos() }</div>
-                  
-                </div>
-                <div class="table-row">
-                  <div class="country"> Email</div>
-                  <div class="visit">${ investigador.getEmail() }</div>
-                  
-                </div>
-                <div class="table-row">
-                  <div class="country"> Centro</div>
-                  <div class="visit">${ solicitud.getEscuela() }</div>
-                  
-                </div>
-                
-                <div class="table-row">
-                  <div class="country"> Departamento</div>
-                  <div class="visit">${ solicitud.getDepartamento() }</div>
-                  
-                </div>
-                <div class="table-row">
-                  <div class="country"> Título de la solicitud</div>
-                  <div class="visit">${ solicitud.getTitulo() }</div>
-                  
-                </div>
-                <div class="table-row">
-                  <div class="country"> Fecha de Creación</div>
-                  <div class="visit">${ solicitud.getFechaCreacion() }</div>
-                  
-                </div>
-                <div class="table-row">
-                  
-                  
-                  <form action="ServeFileServlet" method="get">
-                  		<div class="country"> Memoria</div>
-                  		<div class="visit">
-                  			<input type="hidden" name="id" value="${solicitud.getId()}" />
-			    			<button type="submit">Descargar</button>
-                  		</div>
-					</form>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-	
+        <c:if test="${experto.getSolAsignadas().size() == 0}">
+			<p> "Todavía no tiene asignada ninguna solicitud.'</p>
+		</c:if>
+		<c:if test="${experto.getSolAsignadas().size() != 0}">
+		<div class="container-lista">
+		<c:forEach items="${experto.getSolAsignadas()}" var="soli">
+		<tr>
+		<td>
+		
+					
+        <div class="list-group">
+          <form action="ExpedienteServlet" method="get">
+         	  <input type="hidden" name="email" value="${experto.getEmail()}" />
+			  <input type="hidden" name="idSol" value="${soli.getId()}" />
+			  <button type="submit">
+		             <div class="d-flex w-100 justify-content-between list-group-item list-group-item-action">
+		             <h5 class="mb-1">${ soli.getTitulo() }</h5>
+		             </div>
+            </button>
+          </form>
+        </div>
+        </td>
+        </tr>
+        </c:forEach>  
+      </div>
+      </c:if>
 	</body>
 </html>
