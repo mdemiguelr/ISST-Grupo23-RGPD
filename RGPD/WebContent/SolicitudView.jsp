@@ -100,17 +100,18 @@
 				<div class="mt-10">Apellidos: ${ investigador.getApellidos() }
 				</div>
 				<div class="mt-10">Email: ${ investigador.getEmail() }</div>
+				
 				<form action="CrearSolicitudServlet" method="post"
-					enctype="multipart/form-data" class="form-enviar" style="display: inline-block">
+					enctype="multipart/form-data">
 
-					<div >
+					<div class="mt-10">
 						<input type="text" name="titulo"
 							placeholder="Título de la Solicitud"
 							onfocus="this.placeholder = ''"
 							onblur="this.placeholder = 'Título de la Solicitud'" required
 							class="single-input">
 					</div>
-					<div class="input-group-icon">
+					<div class="input-group-icon mt-10">
 						<div class="icon">
 							<i class="fa fa-book" aria-hidden="true"></i>
 						</div>
@@ -149,14 +150,14 @@
 						</div>
 					</div>
 
-					<div >
+					<div class="mt-10">
 						<input type="text" name="departamento" placeholder="Departamento"
 							onfocus="this.placeholder = ''"
 							onblur="this.placeholder = 'Departamento'" required
 							class="single-input-primary">
 					</div>
 
-					<div >
+					<div class="mt-10">
 
 						<input type="file" name="file" class="filestyle" data-icon="false"
 							class="genric-btn info radius">
@@ -165,18 +166,19 @@
 
 					<input type="hidden" name="emailInv"
 						value="${investigador.getEmail()}" />
-					<button type="submit" class="genric-btn info-border radius mt-10" >Enviar</button>
+					<button type="submit" class="genric-btn info-border radius mt-10" style="width:50%">Enviar</button>
 
 				</form>
 
 
-				<form action="InvestigadorServlet" method="get" class="form-cancelar" style="display: inline-block">
+				<form action="InvestigadorServlet" method="get">
 
-					<button type="submit" class="genric-btn danger-border radius mt-10" >Cancelar</button>
+					<button type="submit" class="genric-btn danger-border radius mt-10" style="width:50%">Cancelar</button>
 
 				</form>
+				</div>
 			</div>
-
+		
 		</div>
 
 		<script src="js/vendor/jquery-2.2.4.min.js"></script>

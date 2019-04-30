@@ -369,7 +369,6 @@ td, th {
 .mb-5 {
   margin-bottom: 5px;
 }
-
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -842,11 +841,28 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: 0;
 }
 
+
 .genric-btn {
   display: inline-block;
   outline: none;
   line-height: 40px;
   
+  font-size: .8em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.genric-btn-lista {
+  display: inline-block;
+  outline: none;
+  line-height: 40px;
+ 
   font-size: .8em;
   text-align: center;
   text-decoration: none;
@@ -970,6 +986,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid transparent;
 }
 
+
 .genric-btn.info {
   color: #fff;
   background: #38a4ff;
@@ -979,18 +996,30 @@ h1, h2, h3, h4, h5, h6 {
 .genric-btn.info:hover {
   color: #38a4ff;
   border: 1px solid #38a4ff;
-  background: #fff;
+  background: #38a4ff;
 }
 
 .genric-btn.info-border {
   color: #38a4ff;
   border: 1px solid #38a4ff;
   background: #fff;
-}
 
+}
 .genric-btn.info-border:hover {
   color: #fff;
   background: #38a4ff;
+  border: 1px solid transparent;
+}
+
+.genric-btn.lista-border {
+   color: #000;
+  border: 1px solid #98d5ff ;
+  background: #fff;
+}
+
+.genric-btn.lista-border:hover {
+  color: #fff;
+  background: #98d5ff;
   border: 1px solid transparent;
 }
 
@@ -1007,15 +1036,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .genric-btn.warning-border {
-  color: #f4e700;
-  border: 1px solid #f4e700;
-  background: #fff;
+  color: #ffffff;
+  background: #38a4ff;
 }
 
 .genric-btn.warning-border:hover {
-  color: #fff;
-  background: #f4e700;
-  border: 1px solid transparent;
+  color: #808080;
+  background: #38a4ff;
 }
 
 .genric-btn.danger {
@@ -1055,9 +1082,22 @@ button {
     margin-bottom: 10px;
 }
 
+.form-listado {
+	margin-top: 10px;
+    margin-left: 0;
+    margin-right: 25%;
+    margin-bottom: 10px;
+}
+
 .genric-btn.danger-border:hover {
   color: #fff;
   background: #f44a40;
+  border: 1px solid transparent;
+}
+
+.genric-btn.lista-border:hover {
+  color: #fff;
+  background: #d1f4fc;
   border: 1px solid transparent;
 }
 
@@ -2258,6 +2298,25 @@ body.mobile-nav-active #mobile-nav-toggle {
   text-transform: uppercase;
   position: relative;
 }
+.lista-btn {
+  background-color: #b68834;
+  line-height: 36px;
+  padding-left: 30px;
+  padding-right: 60px;
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  font-weight: 500;
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+}
 
 .primary-btn:focus {
   outline: none;
@@ -2793,6 +2852,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   src: url('../fonts/poppins/Poppins-Medium.ttf'); 
 }
 
+
+
 @font-face {
   font-family: Poppins-Bold;
   src: url('../fonts/poppins/Poppins-Bold.ttf'); 
@@ -3139,6 +3200,8 @@ Lista- experdientesInv*/
   z-index: 1;
 
 }
+
+
 
 .container-lista a:hover{
   background: #B6E0FF;
