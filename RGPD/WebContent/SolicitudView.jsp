@@ -101,16 +101,16 @@
 				</div>
 				<div class="mt-10">Email: ${ investigador.getEmail() }</div>
 				<form action="CrearSolicitudServlet" method="post"
-					enctype="multipart/form-data">
+					enctype="multipart/form-data" class="form-enviar" style="display: inline-block">
 
-					<div class="mt-10">
+					<div >
 						<input type="text" name="titulo"
 							placeholder="Título de la Solicitud"
 							onfocus="this.placeholder = ''"
 							onblur="this.placeholder = 'Título de la Solicitud'" required
 							class="single-input">
 					</div>
-					<div class="input-group-icon mt-10">
+					<div class="input-group-icon">
 						<div class="icon">
 							<i class="fa fa-book" aria-hidden="true"></i>
 						</div>
@@ -149,32 +149,30 @@
 						</div>
 					</div>
 
-					<div class="mt-10">
+					<div >
 						<input type="text" name="departamento" placeholder="Departamento"
 							onfocus="this.placeholder = ''"
 							onblur="this.placeholder = 'Departamento'" required
 							class="single-input-primary">
 					</div>
 
-					<div class="mt-10">
+					<div >
 
 						<input type="file" name="file" class="filestyle" data-icon="false"
 							class="genric-btn info radius">
 					</div>
-					<div class="container border-top-generic">
-						<div class="button-group-area"></div>
-					</div>
+				
 
 					<input type="hidden" name="emailInv"
 						value="${investigador.getEmail()}" />
-					<button type="submit" class="genric-btn info-border radius">Enviar</button>
+					<button type="submit" class="genric-btn info-border radius mt-10" >Enviar</button>
 
 				</form>
 
 
-				<form action="InvestigadorServlet" method="get">
+				<form action="InvestigadorServlet" method="get" class="form-cancelar" style="display: inline-block">
 
-					<button type="submit" class="genric-btn info-border radius">Cancelar</button>
+					<button type="submit" class="genric-btn danger-border radius mt-10" >Cancelar</button>
 
 				</form>
 			</div>

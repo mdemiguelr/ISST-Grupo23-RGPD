@@ -846,7 +846,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   outline: none;
   line-height: 40px;
-  padding: 0 30px;
+  
   font-size: .8em;
   text-align: center;
   text-decoration: none;
@@ -1034,6 +1034,25 @@ h1, h2, h3, h4, h5, h6 {
   color: #f44a40;
   border: 1px solid #f44a40;
   background: #fff;
+}
+
+button {
+  width: 200px;
+  text-align: center;
+}
+
+.form-enviar {
+	margin-top: 10px;
+    margin-left: 25%;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
+
+.form-cancelar {
+	margin-top: 10px;
+    margin-left: 0;
+    margin-right: 25%;
+    margin-bottom: 10px;
 }
 
 .genric-btn.danger-border:hover {
