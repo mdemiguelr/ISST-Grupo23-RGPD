@@ -1,6 +1,6 @@
 package es.upm.dit.isst.rgpd.dao;
 
-import java.util.Collection;
+import java.util.List;
 
 import es.upm.dit.isst.rgpd.model.Investigador;
 
@@ -15,7 +15,7 @@ public interface InvestigadorDAO {
 
 	public void delete(Investigador investigador);
 
-	public Collection <Investigador> readAll();
+	public List <Investigador> readAll();
 
 
 }

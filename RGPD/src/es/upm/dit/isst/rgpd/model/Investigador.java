@@ -1,7 +1,7 @@
 package es.upm.dit.isst.rgpd.model;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,7 +25,7 @@ public class Investigador implements Serializable {
 	
 
 	@OneToMany(mappedBy = "investigador", fetch = FetchType.EAGER)
-	private Collection<Solicitud> solRealizadas;
+	private List<Solicitud> solRealizadas;
 	
 	
 	public Investigador() {
@@ -48,11 +48,11 @@ public class Investigador implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public Collection<Solicitud> getSolRealizadas() {
+	public List<Solicitud> getSolRealizadas() {
 		return solRealizadas;
 	}
 
-	public void setSolRealizadas(Collection<Solicitud> solRealizadas) {
+	public void setSolRealizadas(List<Solicitud> solRealizadas) {
 		this.solRealizadas = solRealizadas;
 	}
 

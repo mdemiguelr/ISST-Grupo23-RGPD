@@ -37,10 +37,12 @@ public class LoginServlet extends HttpServlet {
 			UsernamePasswordToken token = new UsernamePasswordToken( email, password );
 			try {
 				currentUser.login( token );
-				if ( currentUser.hasRole( "experto" ) )
-					resp.sendRedirect( req.getContextPath() + "/ExpertoServlet?email" + currentUser.getPrincipal());
-				else if ( currentUser.hasRole( "investigador" ) )
+				 if ( currentUser.hasRole( "investigador" ) ) {
 					resp.sendRedirect( req.getContextPath() + "/InvestigadorServlet?email=" + currentUser.getPrincipal() );
+				 } else if (currentUser.hasRole( "experto" )) {
+					 resp.sendRedirect( req.getContextPath() + "/ExpertoServlet?email=" + currentUser.getPrincipal() );
+				 }
+					 
 			} catch ( Exception e ) {
 				resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
 			}

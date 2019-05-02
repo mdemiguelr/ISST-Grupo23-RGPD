@@ -1,7 +1,7 @@
 package es.upm.dit.isst.rgpd.dao;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 import org.hibernate.Session;
 
@@ -39,7 +39,7 @@ public class SolicitudDAOImplementation implements SolicitudDAO {
 		Solicitud solicitud = new Solicitud();
 		try {
 			session.beginTransaction();
-			solicitud = session.load( Solicitud.class, id );
+			solicitud = session.get( Solicitud.class, id );
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			  
@@ -79,9 +79,9 @@ public class SolicitudDAOImplementation implements SolicitudDAO {
 	}
 
 	@Override
-	public Collection<Solicitud> readAll() {
+	public List<Solicitud> readAll() {
 		Session session = SessionFactoryService.get().openSession();
-		Collection<Solicitud> solicitudes = new ArrayList<>();
+		List<Solicitud> solicitudes = new ArrayList<>();
 		try {
 			session.beginTransaction();
 			solicitudes = session.createQuery("from Solicitud").list();

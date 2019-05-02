@@ -112,7 +112,7 @@
                   		</div>
 				</form>
                 </div>
-                <c:if test="${solicitud.estado == 0}">
+                <c:if test="${solicitud.estado == 0 || solicitud.estado == 3 } ">
                 <form action="ValidarServlet" method="post">
 						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
 						<input type="hidden" name="email" value="${experto.getEmail()}" />
@@ -124,6 +124,19 @@
 						<button type="submit" class="btn btn-outline-danger">Denegar</button>
 				</form>
 				</c:if>
+				<c:if test="${solicitud.estado == 0 }">
+				<form action="FaltaInfoServlet" method="post">
+						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
+						<input type="hidden" name="email" value="${experto.getEmail()}" />
+						<input type="text" name="info"
+							placeholder="Información requerida"
+							onfocus="this.placeholder = ''"
+							onblur="this.placeholder = 'Información requerida'" required
+							class="single-input">
+						<button type="submit" class="btn btn-outline-danger">Falta Información</button>
+				</form>
+				</c:if>
+				
                 
               </div>
             </div>

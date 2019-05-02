@@ -1,7 +1,7 @@
 package es.upm.dit.isst.rgpd.dao;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 
 import org.hibernate.Session;
 
@@ -44,7 +44,7 @@ public class InvestigadorDAOImplementation implements InvestigadorDAO {
 		Investigador investigador = new Investigador();
 		try {
 			session.beginTransaction();
-			investigador = session.load( Investigador.class, email );
+			investigador = session.get( Investigador.class, email );
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			
@@ -88,9 +88,9 @@ public class InvestigadorDAOImplementation implements InvestigadorDAO {
 	}
 	
 	@Override
-	public Collection<Investigador> readAll() {
+	public List<Investigador> readAll() {
 		Session session = SessionFactoryService.get().openSession();
-		Collection<Investigador> investigadores = new ArrayList<>();
+		List<Investigador> investigadores = new ArrayList<>();
 		try {
 			session.beginTransaction();
 			investigadores = session.createQuery("from Experto").list();

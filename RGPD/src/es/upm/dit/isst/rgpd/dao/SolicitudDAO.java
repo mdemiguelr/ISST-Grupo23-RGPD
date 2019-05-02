@@ -1,6 +1,6 @@
 package es.upm.dit.isst.rgpd.dao;
 
-import java.util.Collection;
+import java.util.List;
 
 import es.upm.dit.isst.rgpd.model.Solicitud;
 
@@ -14,5 +14,5 @@ public interface SolicitudDAO {
 
 	public void delete(Solicitud solicitud);
 
-	public Collection<Solicitud> readAll();
+	public List<Solicitud> readAll();
 }
