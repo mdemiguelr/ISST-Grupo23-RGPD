@@ -66,59 +66,64 @@
             </div>
           </div>
         </header><!-- #header -->
-		<div class="section-top-border">
+		<div class="section-top-border" style="margin-right:80px; margin-left:80px">
+			<div class="row">
+			<div class="col-lg-12 col-md-12">
             <h3 class="mb-30">Expediente</h3>
             <div class="progress-table-wrap">
               <div class="progress-table">
                 
-                <div class="table-row">
+                <div class="table-row mt-20">
                   <div class="country"> Nombre </div>
                   <div class="visit">${ investigador.getNombre() }</div>
                   
                 </div>
-                <div class="table-row">
+                <div class="table-row mt-20">
                   <div class="country"> Apellidos</div>
                   <div class="visit">${ investigador.getApellidos() }</div>
                   
                 </div>
-                <div class="table-row">
+                <div class="table-row mt-20">
                   <div class="country"> Email</div>
                   <div class="visit">${ investigador.getEmail() }</div>
                   
                 </div>
-                <div class="table-row">
+                <div class="table-row mt-20">
                   <div class="country"> Centro</div>
                   <div class="visit">${ solicitud.getEscuela() }</div>
                   
                 </div>
                 
-                <div class="table-row">
+                <div class="table-row mt-20">
                   <div class="country"> Departamento</div>
                   <div class="visit">${ solicitud.getDepartamento() }</div>
                   
                 </div>
-                <div class="table-row">
+                <div class="table-row mt-20">
                   <div class="country"> Título de la solicitud</div>
                   <div class="visit">${ solicitud.getTitulo() }</div>
                   
                 </div>
-                <div class="table-row">
+                <div class="table-row mt-20">
                   <div class="country"> Fecha de Creación</div>
                   <div class="visit">${ solicitud.getFechaCreacion() }</div>
                   
                 </div>
-                <div class="table-row">
+                
                   
                   
                   <form action="ServeFileServlet" method="get">
+                  	<div class="table-row mt-20">
                   		<div class="country"> Memoria</div>
-                  		<div class="visit">
+                  		<div class="mt-10" style="margin-left:4px">
                   			<input type="hidden" name="id" value="${solicitud.getId()}" />
-			    			<button type="submit">Descargar</button>
+			    			<button type="submit" class="genric-btn success-border radius" style="width:100%">Descargar</button>
                   		</div>
-					</form>
+                  	 </div>
+				  </form>
+           
                 </div>
-                
+               </div>
               </div>
             </div>
           </div>

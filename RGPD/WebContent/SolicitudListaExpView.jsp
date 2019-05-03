@@ -70,14 +70,15 @@
 		<td>
 		
 					
-        <div class="list-group">
+        <div class="list-group mt-10">
           <form action="ExpedienteServlet" method="get">
          	  <input type="hidden" name="email" value="${experto.getEmail()}" />
 			  <input type="hidden" name="idSol" value="${soli.getId()}" />
-			  <button type="submit">
-		             <div class="d-flex w-100 justify-content-between list-group-item list-group-item-action">
-		             <h5 class="mb-1">${ soli.getTitulo() }</h5>
-		             </div>
+			  <button type="submit" class="genric-btn success-border radius" style="width:100%">
+		             <p></p>
+		             <h5 class="mb-10">${ soli.getTitulo()}
+		            </h5>
+		             <p class="mb-1">ESTADO = ${ soli.getEstado() }</p> 
             </button>
           </form>
         </div>

@@ -60,11 +60,12 @@
             </div>
           </div>
         </header><!-- #header -->
-		<div class="section-top-border">
+			<div class="section-top-border" style="margin-right:80px; margin-left:80px">
+			<div class="row">
+			<div class="col-lg-12 col-md-12">
             <h3 class="mb-30">Expediente</h3>
-            <div class="progress-table-wrap">
+            <div class="progress-table-wrap mt-10">
               <div class="progress-table">
-                
                 <div class="table-row">
                   <div class="country"> Nombre </div>
                   <div class="visit">${ solicitud.getInvestigador().getNombre() }</div>
@@ -101,43 +102,44 @@
                   <div class="visit">${ solicitud.getFechaCreacion() }</div>
                   
                 </div>
-                <div class="table-row">
-                  
-                  
-                  <form action="ServeFileServlet" method="get">
+                 <form action="ServeFileServlet" method="get">
+                 		<div class="table-row">
                   		<div class="country"> Memoria</div>
-                  		<div class="visit">
+                  		<div class="mt-10" style="margin-left:4px">
                   			<input type="hidden" name="id" value="${solicitud.getId()}" />
-			    			<button type="submit">Descargar</button>
+			    			<button type="submit"  class="genric-btn success-border radius" style="width:100%">Descargar</button>
                   		</div>
+                  	</div>
 				</form>
                 </div>
-                <c:if test="${solicitud.estado == 0 || solicitud.estado == 3 } ">
+                <div class="mt-10" style="width:100%">
                 <form action="ValidarServlet" method="post">
 						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
 						<input type="hidden" name="email" value="${experto.getEmail()}" />
-						<button type="submit" class="btn btn-outline-success">Validar</button>
+						<button type="submit" class="genric-btn info-border radius" style="width:100%">Validar</button>
 				</form>
 				<form action="DenegarServlet" method="post">
 						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
 						<input type="hidden" name="email" value="${experto.getEmail()}" />
-						<button type="submit" class="btn btn-outline-danger">Denegar</button>
+						<button type="submit" class="genric-btn danger-border radius" style="width:100%">Denegar</button>
 				</form>
-				</c:if>
 				<c:if test="${solicitud.estado == 0 }">
 				<form action="FaltaInfoServlet" method="post">
 						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
 						<input type="hidden" name="email" value="${experto.getEmail()}" />
+						<br>
 						<input type="text" name="info"
 							placeholder="Información requerida"
 							onfocus="this.placeholder = ''"
 							onblur="this.placeholder = 'Información requerida'" required
 							class="single-input">
-						<button type="submit" class="btn btn-outline-danger">Falta Información</button>
+						<button type="submit" class="genric-btn warning-border radius" style="width:100%">Falta Información</button>
 				</form>
 				</c:if>
+				</div>
 				
-                
+                </div>
+                </div>
               </div>
             </div>
           </div>

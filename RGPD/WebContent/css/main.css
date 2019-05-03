@@ -989,25 +989,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .genric-btn.info {
   color: #fff;
-  background: #38a4ff;
+  background: #d4ff7c;
   border: 1px solid transparent;
 }
 
 .genric-btn.info:hover {
-  color: #38a4ff;
-  border: 1px solid #38a4ff;
-  background: #38a4ff;
+  color: #d4ff7c;
+  border: 1px solid #d4ff7c;
+  background: #d4ff7c;
 }
 
 .genric-btn.info-border {
-  color: #38a4ff;
-  border: 1px solid #38a4ff;
+  color: #d4ff7c;
+  border: 1px solid #d4ff7c;
   background: #fff;
 
 }
 .genric-btn.info-border:hover {
   color: #fff;
-  background: #38a4ff;
+  background: #d4ff7c;
   border: 1px solid transparent;
 }
 
@@ -1025,41 +1025,41 @@ h1, h2, h3, h4, h5, h6 {
 
 .genric-btn.warning {
   color: #fff;
-  background: #f4e700;
+  background: #FFFD8D;
   border: 1px solid transparent;
 }
 
 .genric-btn.warning:hover {
-  color: #f4e700;
-  border: 1px solid #f4e700;
+  color: #FFFD8D;
+  border: 1px solid #FFFD8D;
   background: #fff;
 }
 
 .genric-btn.warning-border {
-  color: #ffffff;
-  background: #38a4ff;
+  color: #FFFD8D;
+  background: #FFFD8D;
 }
 
 .genric-btn.warning-border:hover {
   color: #808080;
-  background: #38a4ff;
+  background: #FFFD8D;
 }
 
 .genric-btn.danger {
   color: #fff;
-  background: #f44a40;
+  background: #FF948D;
   border: 1px solid transparent;
 }
 
 .genric-btn.danger:hover {
-  color: #f44a40;
-  border: 1px solid #f44a40;
+  color: #FF948D;
+  border: 1px solid #FF948D;
   background: #fff;
 }
 
 .genric-btn.danger-border {
-  color: #f44a40;
-  border: 1px solid #f44a40;
+  color: #FF948D;
+  border: 1px solid #FF948D;
   background: #fff;
 }
 
@@ -1091,7 +1091,7 @@ button {
 
 .genric-btn.danger-border:hover {
   color: #fff;
-  background: #f44a40;
+  background: #FC7575;
   border: 1px solid transparent;
 }
 
