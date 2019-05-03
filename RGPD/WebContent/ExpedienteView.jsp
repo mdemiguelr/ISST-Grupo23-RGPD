@@ -64,7 +64,7 @@
 			<div class="row">
 			<div class="col-lg-12 col-md-12">
             <h3 class="mb-30">Expediente</h3>
-            <div class="progress-table-wrap mt-10">
+            <div class="table table-bordered table-stripped mt-10">
               <div class="progress-table">
                 <div class="table-row">
                   <div class="country"> Nombre </div>

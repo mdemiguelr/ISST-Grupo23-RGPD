@@ -172,7 +172,7 @@
 
 
 				<form action="InvestigadorServlet" method="get">
-
+					<input type="hidden" name="email" value="${investigador.getEmail()}" />
 					<button type="submit" class="genric-btn danger-border radius mt-10" style="width:50%">Cancelar</button>
 
 				</form>

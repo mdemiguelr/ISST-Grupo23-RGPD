@@ -70,7 +70,7 @@
 			<div class="row">
 			<div class="col-lg-12 col-md-12">
             <h3 class="mb-30">Expediente</h3>
-            <div class="progress-table-wrap">
+            <div class="table table-striped table-bordered">
               <div class="progress-table">
                 
                 <div class="table-row mt-20">
@@ -121,7 +121,20 @@
                   		</div>
                   	 </div>
 				  </form>
-           
+				  <c:if test="${  solicitud.getEstado() == 3 }">
+				  <div class="table-row mt-20" style="margin-left: 100px">
+				  <form action="ActualizarMemoriaServlet" method="post" enctype="multipart/form-data">
+					
+						<div class="form-group" >
+						<input type="file" name="file" class="filestyle" data-icon="false">
+	 					</div>
+	                
+                	<input type="hidden" name="email" value="${investigador.email}" />
+                	<input type="hidden" name="id" value="${solicitud.getId()}" />
+                	<button type="submit" class="genric-btn success-border radius" style="width:100%">Actualizar memoria</button>
+                </form>
+                </div>
+           		</c:if>
                 </div>
                </div>
               </div>

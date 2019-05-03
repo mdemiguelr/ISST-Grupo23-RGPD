@@ -61,7 +61,16 @@
           </div>
         </header><!-- #header -->
         <c:if test="${experto.getSolAsignadas().size() == 0}">
-			<p> "Todavía no tiene asignada ninguna solicitud.'</p>
+			
+		<div class="container-lista mb-1">
+					
+         <div class="list-group  mt-20">
+			 <button type="submit" class="genric-btn success-border radius" style="width:100%" >
+		       <p></p>
+		            <h5 class="mb-20">Todavía no tiene ninguna solicitud asignada.</h5>
+		       </button>
+		   </div>
+		  </div>
 		</c:if>
 		<c:if test="${experto.getSolAsignadas().size() != 0}">
 		<div class="container-lista">
