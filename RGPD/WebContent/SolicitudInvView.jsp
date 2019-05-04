@@ -121,7 +121,7 @@
                   		</div>
                   	 </div>
 				  </form>
-				  <c:if test="${  solicitud.getEstado() == 3 }">
+				  <c:if test="${ solicitud.getEstado() == 3 }">
 				  <div class="table-row mt-20" style="margin-left: 100px">
 				  <form action="ActualizarMemoriaServlet" method="post" enctype="multipart/form-data">
 					
@@ -132,7 +132,7 @@
                 	<input type="hidden" name="email" value="${investigador.email}" />
                 	<input type="hidden" name="id" value="${solicitud.getId()}" />
                 	<button type="submit" class="genric-btn success-border radius" style="width:100%">Actualizar memoria</button>
-                </form>
+                	</form>
                 </div>
            		</c:if>
                 </div>

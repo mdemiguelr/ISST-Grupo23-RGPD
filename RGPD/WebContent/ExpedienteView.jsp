@@ -64,7 +64,7 @@
 			<div class="row">
 			<div class="col-lg-12 col-md-12">
             <h3 class="mb-30">Expediente</h3>
-            <div class="table table-bordered table-stripped mt-10">
+            <div class="table table-bordered table-stripped mt-20">
               <div class="progress-table">
                 <div class="table-row">
                   <div class="country"> Nombre </div>
@@ -103,7 +103,7 @@
                   
                 </div>
                  <form action="ServeFileServlet" method="get">
-                 		<div class="table-row">
+                 	<div class="table-row">
                   		<div class="country"> Memoria</div>
                   		<div class="mt-10" style="margin-left:4px">
                   			<input type="hidden" name="id" value="${solicitud.getId()}" />
@@ -111,20 +111,34 @@
                   		</div>
                   	</div>
 				</form>
-                </div>
-                <div class="mt-10" style="width:100%">
-                <form action="ValidarServlet" method="post">
-						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
-						<input type="hidden" name="email" value="${experto.getEmail()}" />
-						<button type="submit" class="genric-btn info-border radius" style="width:100%">Validar</button>
-				</form>
-				<form action="DenegarServlet" method="post">
-						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
-						<input type="hidden" name="email" value="${experto.getEmail()}" />
-						<button type="submit" class="genric-btn danger-border radius" style="width:100%">Denegar</button>
-				</form>
+                
+                <div class="mt-20 table-row" style="width:100%">
+	                <div class="col-lg-4 col-md-4" style="margin-left:40px">
+	                
+		                <form action="ValidarServlet" method="post">
+		                <div class="mt-10" style="margin-left:30px">
+								<input type="hidden" name="idSol" value="${solicitud.getId()}" />
+								<input type="hidden" name="email" value="${experto.getEmail()}" />
+								<button type="submit" class="genric-btn info-border radius" style="width:90%">Validar</button>
+						</div></form>
+					</div>
+					<div class="col-lg-4 col-md-4" >
+					
+						<form action="DenegarServlet" method="post">
+						<div class="mt-10" style="margin-left:0px">
+								<input type="hidden" name="idSol" value="${solicitud.getId()}" />
+								<input type="hidden" name="email" value="${experto.getEmail()}" />
+								<button type="submit" class="genric-btn danger-border radius" style="width:90%">Denegar</button>
+						</div></form>
+					</div>
+					
+				</div>
 				<c:if test="${solicitud.estado == 0 }">
+				
+				<div class="mt-20 table-row" style="width:100%">
+				<div class="col-lg-8 col-md-8" style="margin-left:40px">
 				<form action="FaltaInfoServlet" method="post">
+				<div class="mt-20" style="margin-left:30px; width:90%">
 						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
 						<input type="hidden" name="email" value="${experto.getEmail()}" />
 						<br>
@@ -133,16 +147,17 @@
 							onfocus="this.placeholder = ''"
 							onblur="this.placeholder = 'Información requerida'" required
 							class="single-input">
-						<button type="submit" class="genric-btn warning-border radius" style="width:100%">Falta Información</button>
-				</form>
+						<button type="submit" class="genric-btn warning-border radius mt-20" style="width:90%">Falta Información</button>
+				</div></form>
+				</div></div>
 				</c:if>
-				</div>
+				
+				
 				
                 </div>
                 </div>
               </div>
-            </div>
-          </div>
+           
 	
 	</body>
 </html>
