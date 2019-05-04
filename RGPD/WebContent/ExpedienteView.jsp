@@ -112,6 +112,7 @@
                   	</div>
 				</form>
                 
+                <c:if test="${(solicitud.estado == 0) or (solicitud.estado == 3) }">
                 <div class="mt-20 table-row" style="width:100%">
 	                <div class="col-lg-4 col-md-4" style="margin-left:40px">
 	                
@@ -133,7 +134,8 @@
 					</div>
 					
 				</div>
-				<c:if test="${solicitud.estado == 0 }">
+				</c:if>
+				<c:if test="${(solicitud.estado == 0) or (solicitud.estado == 3) }">
 				
 				<div class="mt-20 table-row" style="width:100%">
 				<div class="col-lg-8 col-md-8" style="margin-left:40px">
