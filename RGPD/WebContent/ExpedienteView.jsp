@@ -136,26 +136,22 @@
 				</div>
 				</c:if>
 				<c:if test="${(solicitud.estado == 0) or (solicitud.estado == 3) }">
-				
-				<div class="mt-20 table-row" style="width:100%">
-				<div class="col-lg-8 col-md-8" style="margin-left:40px">
-				<form action="FaltaInfoServlet" method="post">
-				<div class="mt-20" style="margin-left:30px; width:90%">
-						<input type="hidden" name="idSol" value="${solicitud.getId()}" />
-						<input type="hidden" name="email" value="${experto.getEmail()}" />
-						<br>
-						<input type="text" name="info"
-							placeholder="Información requerida"
-							onfocus="this.placeholder = ''"
-							onblur="this.placeholder = 'Información requerida'" required
-							class="single-input">
-						<button type="submit" class="genric-btn warning-border radius mt-20" style="width:90%">Falta Información</button>
-				</div></form>
-				</div></div>
+					<div class="mt-20 table-row" style="width:100%">
+						<div class="col-lg-8 col-md-8" style="margin-left:40px">
+						<form action="FaltaInfoServlet" method="post">
+						<div class="mt-20" style="margin-left:30px; width:90%">
+								<input type="hidden" name="idSol" value="${solicitud.getId()}" />
+								<input type="hidden" name="email" value="${experto.getEmail()}" />
+								<br>
+								<input type="text" name="info"
+									placeholder="Información requerida"
+									onfocus="this.placeholder = ''"
+									onblur="this.placeholder = 'Información requerida'" required
+									class="single-input">
+								<button type="submit" class="genric-btn warning-border radius mt-20" style="width:90%">Falta Información</button>
+						</div></form>
+					</div></div>
 				</c:if>
-				
-				
-				
                 </div>
                 </div>
               </div>

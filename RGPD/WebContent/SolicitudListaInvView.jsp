@@ -100,11 +100,21 @@
 		       <p></p>
 		             <h5 class="mb-10">${ soli.getTitulo()}
 		            </h5>
-		             <p class="mb-1">ESTADO = ${ soli.getEstado() }</p> 
-		            
-		                </button>
-		                 </form>
-		              </div>
+		            <c:if test="${soli.getEstado()==0}">
+	                 <p class="mb-1">ESTADO = SOLICITUD PENDIENTE</p> 
+	                </c:if>
+	                <c:if test="${soli.getEstado()==1}">
+	                 <p class="mb-1">ESTADO = SOLICITUD VALIDADA</p> 
+	                </c:if>
+	                <c:if test="${soli.getEstado()==2}">
+	                 <p class="mb-1">ESTADO = SOLICITUD DENEGADA</p> 
+	                </c:if>
+	                <c:if test="${soli.getEstado()==3}">
+	                 <p class="mb-1">ESTADO = FALTA INFORMACIÓN</p> 
+	                </c:if>
+	           </button>
+		       </form>
+		      </div>
 	
         </td>
         </tr>

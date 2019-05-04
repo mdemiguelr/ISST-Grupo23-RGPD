@@ -116,38 +116,49 @@
 							<i class="fa fa-book" aria-hidden="true"></i>
 						</div>
 						<div class="form-select" id="default-select">
-							<select name="escuela">
-								<option value="1">E.T.S de Arquitectura</option>
-								<option value="2">E.T.S de Edificación</option>
-								<option value="3">E.T.S de Ingeniería Aeronáutica y del
-									Espacio</option>
-								<option value="4">E.T.S de Ingeniería Agronómica,
-									Alimentaria y de Biosistemas</option>
-								<option value="5">E.T.S de Ingeniería de Montes,
-									Forestal y del Medio Natural</option>
-								<option value="6">E.T.S de Ingenieros de Caminos,
-									Canales y Puertos</option>
-								<option value="7">E.T.S de Ingenieros de
-									Telecomunicación</option>
-								<option value="8">E.T.S de Ingenieros Navales</option>
-								<option value="9">E.T.S de Ingeniería de Montes,
-									Forestal y del Medio Natural</option>
-								<option value="10">INEF</option>
-								<option value="11">E.T.S de Ingeniería Civil</option>
-								<option value="12">E.T.S de Ingeniería y Diseño
-									Industrial</option>
-								<option value="13">E.T.S de Ingenieros de Minas y
-									Energía</option>
-								<option value="14">E.T.S de Ingenieros Industriales</option>
-								<option value="15">E.T.S de Ingenieros Informáticos</option>
-								<option value="16">E.T.S de Ingeniería de Sistemas
-									Informáticos</option>
-								<option value="17">E.T.S de Ingeniería y Sistemas de
-									Telecomunicación</option>
-								<option value="18">E.T.S de Ingenieros en Topografía,
-									Geodesia y Cartografía</option>
-							</select>
-						</div>
+				              <select name="escuela">
+				                <option value="E.T.S de Arquitectura">E.T.S de Arquitectura</option>
+				                <option value="E.T.S de Edificación">E.T.S de Edificación</option>
+				                <option value="E.T.S de Ingeniería Aeronáutica y del
+				                  Espacio">E.T.S de Ingeniería Aeronáutica y del
+				                  Espacio</option>
+				                <option value="E.T.S de Ingeniería Agronómica,
+				                  Alimentaria y de Biosistemas">E.T.S de Ingeniería Agronómica,
+				                  Alimentaria y de Biosistemas</option>
+				                <option value="E.T.S de Ingeniería de Montes,
+				                  Forestal y del Medio Natural">E.T.S de Ingeniería de Montes,
+				                  Forestal y del Medio Natural</option>
+				                <option value="E.T.S de Ingenieros de Caminos,
+				                  Canales y Puertos">E.T.S de Ingenieros de Caminos,
+				                  Canales y Puertos</option>
+				                <option value="E.T.S de Ingenieros de
+				                  Telecomunicación">E.T.S de Ingenieros de
+				                  Telecomunicación</option>
+				                <option value="E.T.S de Ingenieros Navales">E.T.S de Ingenieros Navales</option>
+				                <option value="E.T.S de Ingeniería de Montes,
+				                  Forestal y del Medio Natural">E.T.S de Ingeniería de Montes,
+				                  Forestal y del Medio Natural</option>
+				                <option value="INEF">INEF</option>
+				                <option value="E.T.S de Ingeniería Civil">E.T.S de Ingeniería Civil</option>
+				                <option value="E.T.S de Ingeniería y Diseño
+				                  Industrial">E.T.S de Ingeniería y Diseño
+				                  Industrial</option>
+				                <option value="E.T.S de Ingenieros de Minas y
+				                  Energía">E.T.S de Ingenieros de Minas y
+				                  Energía</option>
+				                <option value="E.T.S de Ingenieros Industriales">E.T.S de Ingenieros Industriales</option>
+				                <option value="E.T.S de Ingenieros Informáticos">E.T.S de Ingenieros Informáticos</option>
+				                <option value="E.T.S de Ingeniería de Sistemas
+				                  Informáticos">E.T.S de Ingeniería de Sistemas
+				                  Informáticos</option>
+				                <option value="E.T.S de Ingeniería y Sistemas de
+				                  Telecomunicación">E.T.S de Ingeniería y Sistemas de
+				                  Telecomunicación</option>
+				                <option value="E.T.S de Ingenieros en Topografía,
+				                  Geodesia y Cartografía">E.T.S de Ingenieros en Topografía,
+				                  Geodesia y Cartografía</option>
+				              </select>
+                           </div>
 					</div>
 
 					<div class="mt-10">
