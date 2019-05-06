@@ -31,7 +31,7 @@ public class FaltaInfoServlet extends HttpServlet {
 		solicitud.setEstado(3);
 		sdao.update(solicitud);
 		sdao.readAll();
-		EmailHandler correo = new EmailHandler();
+		EmailHandler correo = EmailHandler.getInstance();
 		correo.sendEmail(solicitud.getInvestigador().getEmail(), "[RGPD] Falta Información en su solicitud", cuerpo);
 
 
