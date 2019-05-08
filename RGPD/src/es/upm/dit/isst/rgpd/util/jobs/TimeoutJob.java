@@ -22,7 +22,7 @@ public class TimeoutJob  implements Job {
     public void execute(JobExecutionContext context)
             throws JobExecutionException {
 
-    	EmailHandler correo = new EmailHandler();
+    	EmailHandler correo = EmailHandler.getInstance();
     	
     	SolicitudDAO sdao = SolicitudDAOImplementation.getInstance();
     	List<Solicitud> solicitudes = new ArrayList<>();
@@ -38,6 +38,7 @@ public class TimeoutJob  implements Job {
 			if (dias>1) {
 				expertos = (List<Experto>) solicitudes.get(i).getExpertos();
 				for(int j=0; j<expertos.size(); j++) {
+					
 					correo.sendEmail(expertos.get(j).getEmail(), "Aviso de revisión de expediente", "Tiene un expediente para revisar");
 				}
 			}	

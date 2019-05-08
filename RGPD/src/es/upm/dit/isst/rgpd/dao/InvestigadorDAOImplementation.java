@@ -93,7 +93,7 @@ public class InvestigadorDAOImplementation implements InvestigadorDAO {
 		List<Investigador> investigadores = new ArrayList<>();
 		try {
 			session.beginTransaction();
-			investigadores = session.createQuery("from Experto").list();
+			investigadores = session.createQuery("from 	Investigador").list();
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			
