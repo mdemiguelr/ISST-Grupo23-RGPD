@@ -65,7 +65,7 @@
 		<div class="container">
 			<div class="row align-items-center justify-content-between d-flex">
 				<div id="logo">
-					<a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+					<img src="images/indice_opt.png" alt="Logo" title="" />
 				</div>
 				<nav id="nav-menu-container">
 					<ul class="nav-menu">
@@ -177,7 +177,7 @@
 
 					<input type="hidden" name="emailInv"
 						value="${investigador.getEmail()}" />
-					<button type="submit" class="genric-btn info-border radius mt-10" style="width:50%">Enviar</button>
+					<button type="submit" class="genric-btn success-border radius mt-10" style="width:50%">Enviar</button>
 
 				</form>
 
