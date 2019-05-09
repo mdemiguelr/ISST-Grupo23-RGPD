@@ -41,7 +41,7 @@
           <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
               <div id="logo">
-                <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+                <img src="images/indice_opt.png" alt="Logo" title="" />
               </div>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
@@ -117,7 +117,7 @@
                   		<div class="country"> Memoria</div>
                   		<div class="mt-10" style="margin-left:4px">
                   			<input type="hidden" name="id" value="${solicitud.getId()}" />
-			    			<button type="submit" class="genric-btn success-border radius" style="width:100%">Descargar</button>
+			    			<button type="submit" class="genric-btn success-border radius" style="width:100%; padding-left:10px; padding-right:10px;">Descargar</button>
                   		</div>
                   	 </div>
 				  </form>

@@ -41,7 +41,7 @@
           <div class="container">
             <div class="row align-items-center justify-content-between d-flex">
               <div id="logo">
-                <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+                <img src="images/indice_opt.png" alt="Logo" title="" />
               </div>
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
