@@ -3,6 +3,7 @@ package es.upm.dit.isst.rgpd.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.LazyInitializationException;
 import org.hibernate.Session;
 
 import es.upm.dit.isst.rgpd.model.Experto;
@@ -40,10 +41,11 @@ private static ExpertoDAOImplementation instance = null;
 		Experto experto = new Experto();
 		try {
 			session.beginTransaction();
-			experto = session.load( Experto.class, email );
+			if(null!=session.get(Experto.class, email))
+		        experto = session.load( Experto.class, email );
 			session.getTransaction().commit();
-		} catch (Exception e) {
-			  
+		} catch ( LazyInitializationException e ) {
+		      experto= null;  
 		} finally {
 			  session.close();
 		}
