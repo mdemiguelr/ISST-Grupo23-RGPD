@@ -35,7 +35,7 @@ public class TimeoutJob  implements Job {
 		
 		for(int i=0; i<solicitudes.size(); i++) {
 			long dias = ChronoUnit.DAYS.between(fechaActual , solicitudes.get(i).getFechaCreacion());
-			if (dias>1) {
+			if (dias>5) {
 				expertos = (List<Experto>) solicitudes.get(i).getExpertos();
 				for(int j=0; j<expertos.size(); j++) {
 					
